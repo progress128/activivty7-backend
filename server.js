@@ -44,7 +44,7 @@ app.get("/", (req, res) => {
       <p><strong>Student Number:</strong> [YOUR STUDENT NUMBER HERE]</p>
       <p><strong>Description:</strong> A backend API to manage maintenance requests such as broken lights, taps, or furniture on campus.</p>
       
-      <p><strong>Base URL:</strong> <code>http://localhost:3000</code> (Update this to your Render URL once hosted)</p>
+      <p><strong>Base URL:</strong> <code>https://activivty6-backend.onrender.com</code> (Update this to your Render URL once hosted)</p>
       
       <h2>Required Routes</h2>
       <table>
