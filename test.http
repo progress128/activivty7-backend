@@ -1,0 +1,49 @@
+### 0. Test API Guide
+GET http://localhost:3000/
+### 1. Test Health Check
+GET http://localhost:3000/health
+
+### 2. Test GET all records
+GET http://localhost:3000/api/records
+
+### 3. Test POST (Create a new record)
+POST http://localhost:3000/api/records
+Content-Type: application/json
+
+{
+  "title": "Broken window in Lab 2",
+  "category": "Furniture",
+  "description": "The window latch is broken and cold air is coming in.",
+  "status": "Pending"
+}
+
+### 4. Test POST (Invalid Input - Missing title)
+# Expected: 400 Bad Request
+POST http://localhost:3000/api/records
+Content-Type: application/json
+
+{
+  "category": "Electrical",
+  "description": "This should fail because title is missing.",
+  "status": "Pending"
+}
+
+### 5. Test GET one record (Replace 9 with the ID from Test 3)
+GET http://localhost:3000/api/records/9
+
+### 6. Test PUT (Update record 9)
+PUT http://localhost:3000/api/records/9
+Content-Type: application/json
+
+{
+  "title": "Fixed window in Lab 2",
+  "category": "Furniture",
+  "description": "The window latch has been replaced.",
+  "status": "Completed"
+}
+
+### 7. Test DELETE (Delete record 9)
+DELETE http://localhost:3000/api/records/9
+
+### 8. Test GET one record again (Should now be 404 Not Found)
+GET http://localhost:3000/api/records/9
